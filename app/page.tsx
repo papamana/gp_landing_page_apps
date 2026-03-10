@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/card'
 import { Download, Heart, BarChart3, Users, Apple, Smartphone } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 
 export default function Home() {
   return (
@@ -199,28 +200,42 @@ export default function Home() {
             Didukung Oleh Instansi Terkait
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            <div className="group relative flex items-center justify-center p-4 bg-white/50 backdrop-blur-sm rounded-2xl shadow-xs border border-border/50 hover:shadow-md hover:border-primary/20 hover:bg-white transition-all duration-300">
-              <img
-                src="/Kabupaten.png"
-                alt="Pemerintah Kabupaten Lombok Utara"
-                className="h-20 md:h-24 w-auto object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
-                onError={(e) => {
-                  e.currentTarget.src = '/placeholder-logo.png';
-                  e.currentTarget.onerror = null;
-                }}
-              />
-            </div>
-            <div className="group relative flex items-center justify-center p-4 bg-white/50 backdrop-blur-sm rounded-2xl shadow-xs border border-border/50 hover:shadow-md hover:border-primary/20 hover:bg-white transition-all duration-300">
-              <img
-                src="/Kesehatan.png"
-                alt="Dinas Kesehatan Bakti Husada"
-                className="h-20 md:h-24 w-auto object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
-                onError={(e) => {
-                  e.currentTarget.src = '/placeholder-logo.png';
-                  e.currentTarget.onerror = null;
-                }}
-              />
-            </div>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div className="group relative flex items-center justify-center p-4 bg-white/50 backdrop-blur-sm rounded-2xl shadow-xs border border-border/50 hover:shadow-md hover:border-primary/20 hover:bg-white transition-all duration-300 cursor-help">
+                  <img
+                    src="/Kabupaten.png"
+                    alt="Pemerintah Kabupaten Lombok Utara"
+                    className="h-20 md:h-24 w-auto object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                    onError={(e) => {
+                      e.currentTarget.src = '/placeholder-logo.png';
+                      e.currentTarget.onerror = null;
+                    }}
+                  />
+                </div>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Pemerintah Kabupaten Lombok Utara</p>
+              </TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div className="group relative flex items-center justify-center p-4 bg-white/50 backdrop-blur-sm rounded-2xl shadow-xs border border-border/50 hover:shadow-md hover:border-primary/20 hover:bg-white transition-all duration-300 cursor-help">
+                  <img
+                    src="/Kesehatan.png"
+                    alt="Dinas Kesehatan Bakti Husada"
+                    className="h-20 md:h-24 w-auto object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                    onError={(e) => {
+                      e.currentTarget.src = '/placeholder-logo.png';
+                      e.currentTarget.onerror = null;
+                    }}
+                  />
+                </div>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>UPT BLUD Puskesmas Gangga</p>
+              </TooltipContent>
+            </Tooltip>
           </div>
         </div>
       </section>
