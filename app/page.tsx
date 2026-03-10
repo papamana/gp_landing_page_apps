@@ -19,7 +19,7 @@ export default function Home() {
             <h1 className="font-bold text-lg text-foreground">Gibran Persebaya</h1>
           </div>
           <Button asChild variant="outline" className="rounded-full">
-            <a href="/app-release.apk" download="app-release.apk">Unduh Sekarang</a>
+            <a href="https://github.com/papamana/gp_landing_page_apps/releases/download/v1.0.0/app-release.apk" target="_blank" rel="noopener noreferrer">Unduh Sekarang</a>
           </Button>
         </div>
       </nav>
@@ -42,7 +42,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button asChild size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                <a href="/app-release.apk" download="app-release.apk">
+                <a href="https://github.com/papamana/gp_landing_page_apps/releases/download/v1.0.0/app-release.apk" target="_blank" rel="noopener noreferrer">
                   <Smartphone className="w-5 h-5 mr-2" />
                   Download Android
                 </a>
@@ -184,7 +184,7 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground px-8">
-              <a href="/app-release.apk" download="app-release.apk">
+              <a href="https://github.com/papamana/gp_landing_page_apps/releases/download/v1.0.0/app-release.apk" target="_blank" rel="noopener noreferrer">
                 <Smartphone className="w-5 h-5 mr-2" />
                 Android
               </a>
