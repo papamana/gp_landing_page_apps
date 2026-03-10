@@ -14,7 +14,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-              <Heart className="w-6 h-6 text-primary" />
+              <Image src="/favicon-32x32.png" alt="Gibran Persebaya Logo" width={24} height={24} className="w-6 h-6" />
             </div>
             <h1 className="font-bold text-lg text-foreground">Gibran Persebaya</h1>
           </div>
@@ -45,12 +45,6 @@ export default function Home() {
                 <a href="https://play.google.com" target="_blank" rel="noopener noreferrer">
                   <Smartphone className="w-5 h-5 mr-2" />
                   Download Android
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-full border-2">
-                <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer">
-                  <Apple className="w-5 h-5 mr-2" />
-                  Download iOS
                 </a>
               </Button>
             </div>
@@ -195,12 +189,6 @@ export default function Home() {
                 Android
               </a>
             </Button>
-            <Button asChild size="lg" className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8">
-              <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer">
-                <Apple className="w-5 h-5 mr-2" />
-                iOS
-              </a>
-            </Button>
           </div>
         </div>
       </section>
@@ -210,7 +198,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <Heart className="w-5 h-5 text-primary" />
+              <Image src="/favicon-32x32.png" alt="Logo" width={20} height={20} className="w-5 h-5" />
               <span className="font-semibold text-foreground">Gibran Persebaya</span>
             </div>
             <p className="text-sm text-muted-foreground text-center">

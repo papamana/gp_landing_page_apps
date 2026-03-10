@@ -11,20 +11,7 @@ export const metadata: Metadata = {
   description: 'Aplikasi pencatatan dan pelaporan tablet tambah darah remaja putri di sekolah. Gerakan atasi bersama masalah anemia melalui peran teman sebaya.',
   generator: 'v0.app',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
+    icon: '/favicon-32x32.png',
     apple: '/apple-icon.png',
   },
 }
