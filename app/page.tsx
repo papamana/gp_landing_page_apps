@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-background to-secondary/5">
+    <div className="min-h-screen bg-linear-to-b from-background via-background to-secondary/5">
       {/* Navbar */}
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-border">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -19,7 +19,7 @@ export default function Home() {
             <h1 className="font-bold text-lg text-foreground">Gibran Persebaya</h1>
           </div>
           <Button asChild variant="outline" className="rounded-full">
-            <Link href="#download">Unduh Sekarang</Link>
+            <a href="/app-release.apk" download="app-release.apk">Unduh Sekarang</a>
           </Button>
         </div>
       </nav>
@@ -42,7 +42,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button asChild size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                <a href="https://play.google.com" target="_blank" rel="noopener noreferrer">
+                <a href="/app-release.apk" download="app-release.apk">
                   <Smartphone className="w-5 h-5 mr-2" />
                   Download Android
                 </a>
@@ -54,7 +54,7 @@ export default function Home() {
           <div className="relative flex justify-center items-center">
             <div className="relative w-full max-w-sm">
               {/* Decorative circles */}
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary/40 to-primary/20 rounded-3xl blur-3xl" />
+              <div className="absolute inset-0 bg-linear-to-br from-secondary/40 to-primary/20 rounded-3xl blur-3xl" />
               <div className="relative">
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/01_onboarding-dLIeW5vjEaNdFX0SEZw96mNG6Rx7pX.png"
@@ -172,7 +172,7 @@ export default function Home() {
 
       {/* Download Section */}
       <section id="download" className="max-w-6xl mx-auto px-4 py-16 md:py-24">
-        <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-3xl p-12 text-center space-y-8 border-2 border-primary/20">
+        <div className="bg-linear-to-r from-primary/10 to-secondary/10 rounded-3xl p-12 text-center space-y-8 border-2 border-primary/20">
           <div className="space-y-4">
             <h2 className="text-4xl font-bold text-foreground">
               Siap Memulai?
@@ -184,7 +184,7 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground px-8">
-              <a href="https://play.google.com" target="_blank" rel="noopener noreferrer">
+              <a href="/app-release.apk" download="app-release.apk">
                 <Smartphone className="w-5 h-5 mr-2" />
                 Android
               </a>
