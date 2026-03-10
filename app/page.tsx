@@ -19,7 +19,7 @@ export default function Home() {
             <h1 className="font-bold text-base sm:text-lg text-foreground truncate">Gibran Persebaya</h1>
           </div>
           <Button asChild variant="outline" className="rounded-full shrink-0 text-xs sm:text-sm px-3 sm:px-4">
-            <a href="https://github.com/papamana/gp_landing_page_apps/releases/download/v1.0.0/app-release.apk" target="_blank" rel="noopener noreferrer">Unduh<span className="hidden sm:inline"> Sekarang</span></a>
+            <a href="https://github.com/papamana/gp_landing_page_apps/releases/download/v1.0.0/app-release.apk" target="_blank" rel="noopener noreferrer">Download<span className="hidden sm:inline"> Sekarang</span></a>
           </Button>
         </div>
       </nav>
