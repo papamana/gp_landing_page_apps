@@ -192,6 +192,38 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Instansi Terkait */}
+      <section className="max-w-6xl mx-auto px-4 py-12 md:py-16 border-t border-border/50">
+        <div className="text-center space-y-8">
+          <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+            Didukung Oleh Instansi Terkait
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+            <div className="group relative flex items-center justify-center p-4 bg-white/50 backdrop-blur-sm rounded-2xl shadow-xs border border-border/50 hover:shadow-md hover:border-primary/20 hover:bg-white transition-all duration-300">
+              <img
+                src="/Kabupaten.png"
+                alt="Pemerintah Kabupaten Lombok Utara"
+                className="h-20 md:h-24 w-auto object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                onError={(e) => {
+                  e.currentTarget.src = '/placeholder-logo.png';
+                  e.currentTarget.onerror = null;
+                }}
+              />
+            </div>
+            <div className="group relative flex items-center justify-center p-4 bg-white/50 backdrop-blur-sm rounded-2xl shadow-xs border border-border/50 hover:shadow-md hover:border-primary/20 hover:bg-white transition-all duration-300">
+              <img
+                src="/Kesehatan.png"
+                alt="Dinas Kesehatan Bakti Husada"
+                className="h-20 md:h-24 w-auto object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                onError={(e) => {
+                  e.currentTarget.src = '/placeholder-logo.png';
+                  e.currentTarget.onerror = null;
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="border-t border-border mt-12 sm:mt-16">
