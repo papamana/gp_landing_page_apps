@@ -56,11 +56,11 @@ export default function Home() {
             <div className="relative w-full max-w-sm">
               {/* Decorative circles */}
               <div className="absolute inset-0 bg-linear-to-br from-secondary/40 to-primary/20 rounded-3xl blur-2xl sm:blur-3xl" />
-              <div className="relative px-4 sm:px-0">
+              <div className="relative px-4 sm:px-0 group">
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/01_onboarding-dLIeW5vjEaNdFX0SEZw96mNG6Rx7pX.png"
                   alt="Gibran Persebaya App Preview"
-                  className="w-full h-auto rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl object-cover"
+                  className="w-full h-auto rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl object-cover transition-all duration-500 ease-out group-hover:-translate-y-2 group-hover:scale-[1.02] group-hover:shadow-primary/20"
                 />
               </div>
             </div>
