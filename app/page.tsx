@@ -53,14 +53,16 @@ export default function Home() {
 
           {/* Right - App Preview */}
           <div className="relative flex justify-center items-center">
-            <div className="relative w-full max-w-sm">
+            <div className="relative w-full max-w-md lg:max-w-lg flex justify-center items-center py-6">
               {/* Decorative circles */}
-              <div className="absolute inset-0 bg-linear-to-br from-secondary/40 to-primary/20 rounded-3xl blur-2xl sm:blur-3xl" />
-              <div className="relative px-4 sm:px-0 group">
+              <div className="absolute w-[120%] lg:w-[130%] aspect-square bg-linear-to-tr from-primary/30 via-secondary/20 to-primary/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '3s' }} />
+              <div className="absolute w-[95%] lg:w-full aspect-square bg-linear-to-b from-primary/10 to-transparent backdrop-blur-3xl rounded-full border border-primary/20 shadow-2xl" />
+              
+              <div className="relative px-4 sm:px-0 group z-10 flex justify-center w-full mt-4 lg:mt-8">
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/01_onboarding-dLIeW5vjEaNdFX0SEZw96mNG6Rx7pX.png"
+                  src="/landing_transparant.png"
                   alt="Gibran Persebaya App Preview"
-                  className="w-full h-auto rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl object-cover transition-all duration-500 ease-out group-hover:-translate-y-2 group-hover:scale-[1.02] group-hover:shadow-primary/20"
+                  className="w-[105%] sm:w-[115%] lg:w-[125%] max-w-none h-auto object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.25)] transition-all duration-500 ease-out group-hover:-translate-y-5 group-hover:scale-[1.03]"
                 />
               </div>
             </div>
