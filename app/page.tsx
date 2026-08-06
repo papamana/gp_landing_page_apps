@@ -1,4 +1,5 @@
 'use client'
+import { useState, useEffect } from 'react'
 
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
@@ -8,10 +9,27 @@ import Link from 'next/link'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 
 export default function Home() {
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', handleScroll)
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <div className="min-h-screen bg-linear-to-b from-background via-background to-secondary/5">
       {/* Navbar */}
-      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-border">
+      <nav 
+        className={`fixed w-full top-0 z-50 transition-all duration-300 ease-in-out ${
+          isScrolled 
+            ? 'bg-white/90 backdrop-blur-md border-b border-border shadow-sm translate-y-0 opacity-100' 
+            : '-translate-y-full opacity-0 pointer-events-none'
+        }`}
+      >
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3 w-auto">
             <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
@@ -26,7 +44,10 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-4 py-16 md:py-24">
+      <section className="relative w-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/landing-header.webp')" }}>
+        {/* Soft overlay keeps foreground text readable across the full image */}
+        <div className="absolute inset-0 bg-linear-to-r from-background/90 via-background/50 to-background/20" />
+        <div className="relative z-10 max-w-6xl mx-auto px-4 pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6 text-center md:text-left">
@@ -49,15 +70,21 @@ export default function Home() {
                 </a>
               </Button>
             </div>
+            {/* Trust Evidence */}
+            <div className="pt-6 sm:pt-8 flex flex-col items-center md:items-start gap-4">
+              <p className="text-xs font-semibold text-foreground/70 uppercase tracking-wider">
+                Didukung Oleh
+              </p>
+              <div className="flex items-center gap-6 sm:gap-8">
+                <img src="/Kabupaten.png" alt="Pemerintah Kabupaten Lombok Utara" title="Pemerintah Kabupaten Lombok Utara" className="h-12 sm:h-14 w-auto object-contain" />
+                <img src="/Kesehatan.png" alt="UPT BLUD Puskesmas Gangga" title="UPT BLUD Puskesmas Gangga" className="h-12 sm:h-14 w-auto object-contain" />
+              </div>
+            </div>
           </div>
 
           {/* Right - App Preview */}
           <div className="relative flex justify-center items-center">
             <div className="relative w-full max-w-md lg:max-w-lg flex justify-center items-center py-6">
-              {/* Decorative circles */}
-              <div className="absolute w-[120%] lg:w-[130%] aspect-square bg-linear-to-tr from-primary/30 via-secondary/20 to-primary/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '3s' }} />
-              <div className="absolute w-[95%] lg:w-full aspect-square bg-linear-to-b from-primary/10 to-transparent backdrop-blur-3xl rounded-full border border-primary/20 shadow-2xl" />
-              
               <div className="relative px-4 sm:px-0 group z-10 flex justify-center w-full mt-4 lg:mt-8">
                 <img
                   src="/landing_transparant.png"
@@ -67,6 +94,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </section>
 
@@ -132,7 +160,7 @@ export default function Home() {
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-10%20at%2010.47.27-PFWcBTfC2sll1UYI7gQaZdV2vTcjD8.jpeg"
                 alt="Mode Aplikasi - Sekolah dan Puskesmas"
-                className="w-full h-auto rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl"
+                className="w-auto h-auto max-w-full max-h-[60vh] md:max-h-[70vh] object-contain rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl mx-auto"
               />
             </div>
           </div>
@@ -192,52 +220,6 @@ export default function Home() {
                 Android
               </a>
             </Button>
-          </div>
-        </div>
-      </section>
-      {/* Instansi Terkait */}
-      <section className="max-w-6xl mx-auto px-4 py-12 md:py-16 border-t border-border/50">
-        <div className="text-center space-y-8">
-          <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
-            Didukung Oleh Instansi Terkait
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <div className="group relative flex items-center justify-center p-4 bg-white/50 backdrop-blur-sm rounded-2xl shadow-xs border border-border/50 hover:shadow-md hover:border-primary/20 hover:bg-white transition-all duration-300 cursor-help">
-                  <img
-                    src="/Kabupaten.png"
-                    alt="Pemerintah Kabupaten Lombok Utara"
-                    className="h-20 md:h-24 w-auto object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
-                    onError={(e) => {
-                      e.currentTarget.src = '/placeholder-logo.png';
-                      e.currentTarget.onerror = null;
-                    }}
-                  />
-                </div>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Pemerintah Kabupaten Lombok Utara</p>
-              </TooltipContent>
-            </Tooltip>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <div className="group relative flex items-center justify-center p-4 bg-white/50 backdrop-blur-sm rounded-2xl shadow-xs border border-border/50 hover:shadow-md hover:border-primary/20 hover:bg-white transition-all duration-300 cursor-help">
-                  <img
-                    src="/Kesehatan.png"
-                    alt="Dinas Kesehatan Bakti Husada"
-                    className="h-20 md:h-24 w-auto object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
-                    onError={(e) => {
-                      e.currentTarget.src = '/placeholder-logo.png';
-                      e.currentTarget.onerror = null;
-                    }}
-                  />
-                </div>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>UPT BLUD Puskesmas Gangga</p>
-              </TooltipContent>
-            </Tooltip>
           </div>
         </div>
       </section>
