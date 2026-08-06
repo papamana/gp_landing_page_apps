@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     siteName: 'Gibran Persebaya',
     images: [
       {
-        url: '/apple-icon.png',
-        width: 180,
-        height: 180,
+        url: '/favicon-32x32.png',
+        width: 91,
+        height: 91,
         alt: 'Gibran Persebaya Logo',
       },
     ],
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary',
     title: 'Gibran Persebaya',
     description: 'Aplikasi pencatatan dan pelaporan tablet tambah darah remaja putri di sekolah.',
-    images: ['/apple-icon.png'],
+    images: ['/favicon-32x32.png'],
   },
 }
 
