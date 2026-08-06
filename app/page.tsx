@@ -44,26 +44,22 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative w-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/landing-header.webp')" }}>
-        {/* Soft overlay keeps foreground text readable across the full image */}
-        <div className="absolute inset-0 bg-linear-to-r from-background/90 via-background/50 to-background/20" />
-        <div className="relative z-10 max-w-6xl mx-auto px-4 pt-24 pb-16 md:pt-32 md:pb-24">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="space-y-6 text-center md:text-left">
-            <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground text-balance leading-tight">
+      <section className="relative w-full min-h-[100dvh] flex items-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/landing-header.webp')" }}>
+        <div className="relative w-full z-10 max-w-6xl mx-auto px-4 pt-20 pb-12 md:pt-24 md:pb-16">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Left Content - Wrapped in Glass Card for Precision & Readability */}
+          <div className="space-y-5 text-center md:text-left bg-white/80 dark:bg-black/60 backdrop-blur-lg p-6 sm:p-8 rounded-3xl border border-white/50 shadow-2xl relative z-20">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                 <span className="text-primary">Gibran Persebaya</span>
               </h1>
-              <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed balance">
+              <p className="text-lg sm:text-xl text-foreground/90 font-medium leading-relaxed">
                 Gerakan Atasi Bersama Masalah Anemia melalui Peran Teman Sebaya
               </p>
-            </div>
-            <p className="text-base sm:text-lg text-foreground/80 balance">
+            <p className="text-base sm:text-lg text-foreground/70">
               Aplikasi pencatatan dan pelaporan tablet tambah darah remaja putri di sekolah. Memudahkan pendokumentasian dan monitoring kesehatan remaja putri dengan sistem yang terstruktur dan mudah digunakan.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
-              <Button asChild size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground">
+            <div className="flex flex-col sm:flex-row gap-4 pt-2 justify-center md:justify-start">
+              <Button asChild size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all">
                 <a href="https://github.com/papamana/gp_landing_page_apps/releases/download/v1.0.0/app-release.apk" target="_blank" rel="noopener noreferrer">
                   <Smartphone className="w-5 h-5 mr-2" />
                   Download Android
@@ -71,19 +67,17 @@ export default function Home() {
               </Button>
             </div>
             {/* Trust Evidence */}
-            <div className="pt-6 sm:pt-8 flex flex-col items-center md:items-start gap-4">
-              <p className="text-xs font-semibold text-foreground/70 uppercase tracking-wider">
+            <div className="pt-4 sm:pt-6 flex flex-col items-center md:items-start gap-3">
+              <p className="text-xs font-semibold text-foreground/80 uppercase tracking-wider">
                 Didukung Oleh
               </p>
-              <div className="flex items-center gap-6 sm:gap-8">
-                <img src="/Kabupaten.png" alt="Pemerintah Kabupaten Lombok Utara" title="Pemerintah Kabupaten Lombok Utara" className="h-12 sm:h-14 w-auto object-contain" />
-                <img src="/Kesehatan.png" alt="UPT BLUD Puskesmas Gangga" title="UPT BLUD Puskesmas Gangga" className="h-12 sm:h-14 w-auto object-contain" />
+              <div className="flex items-center gap-6 sm:gap-8 bg-white/50 px-4 py-2 rounded-2xl border border-white/40">
+                <img src="/Kabupaten.png" alt="Pemerintah Kabupaten Lombok Utara" title="Pemerintah Kabupaten Lombok Utara" className="h-8 sm:h-10 w-auto object-contain" />
+                <img src="/Kesehatan.png" alt="UPT BLUD Puskesmas Gangga" title="UPT BLUD Puskesmas Gangga" className="h-8 sm:h-10 w-auto object-contain" />
+              </div>
               </div>
             </div>
-          </div>
-
-          {/* Right - App Preview */}
-          <div className="relative flex justify-center items-center">
+          <div className="relative flex justify-center items-center -mt-16 sm:-mt-24 md:mt-0 z-10">
             <div className="relative w-full max-w-md lg:max-w-lg flex justify-center items-center py-6">
               <div className="relative px-4 sm:px-0 group z-10 flex justify-center w-full mt-4 lg:mt-8">
                 <img
